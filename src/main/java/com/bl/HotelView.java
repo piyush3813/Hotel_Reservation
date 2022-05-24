@@ -1,29 +1,27 @@
 package com.bl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class HotelView {
-    private Scanner scanner = new Scanner(System.in);
-    public HotelType createHotel(List<HotelType> hotelsList){
-        HotelType hotel = new HotelType();
-        System.out.println("enter hId");
-        int id = scanner.nextInt();
-        hotel.sethId(id);
+    public void hotellist(){
+        List<HotelType> hotellist=new ArrayList<HotelType>();
+        HotelType h1= new HotelType(101,3,"Lakewood",110.0,80);
+        HotelType h2= new HotelType(102,4,"Bridgewood",160.0,110);
+        HotelType h3= new HotelType(103,5,"Ridgewood",220.0,100);
 
-        System.out.println("enter hRating");
-        int rate = scanner.nextInt();
-        hotel.sethRating(rate);
+        hotellist.add(h1);
+        hotellist.add(h2);
+        hotellist.add(h3);
+        System.out.println("hotel-ID    hotel-rating    hotel-name      hotel-prices-regular    hotel-prices-rewarded");
 
-        System.out.println("enter Hotel name ");
-        String name = scanner.next();
-        hotel.sethName(name);
-    return hotel;
-    }
+        for (HotelType h:hotellist)
+        {
+            System.out.println(h.hId+"              "+h.hRating+"            "+h.hName+"              "+h.hrRates+"            "+h.hRewardRates );
+        }
 
-    public void readHotel(List<HotelType> hotelsList){
-        System.out.println("Hotels details");
-        System.out.println(hotelsList);
 
     }
+
 }
